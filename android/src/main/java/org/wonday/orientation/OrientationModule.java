@@ -412,10 +412,10 @@ public class OrientationModule extends ReactContextBaseJavaModule implements Ori
     private void compatRegisterReceiver(
         Context context, BroadcastReceiver receiver, IntentFilter filter, boolean exported) {
         if (Build.VERSION.SDK_INT >= 34 && context.getApplicationInfo().targetSdkVersion >= 34) {
-        context.registerReceiver(
-            receiver, filter, exported ? Context.RECEIVER_EXPORTED : Context.RECEIVER_NOT_EXPORTED);
+            context.registerReceiver(
+                receiver, filter, exported ? Context.RECEIVER_EXPORTED : Context.RECEIVER_NOT_EXPORTED);
         } else {
-        context.registerReceiver(receiver, filter);
+            context.registerReceiver(receiver, filter);
         }
     }
 }
